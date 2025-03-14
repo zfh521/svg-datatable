@@ -6,7 +6,7 @@ on:
       - main
 
 permissions:
-  contents: write  # 授予写权限以推送分支
+  contents: write
 
 jobs:
   deploy:
@@ -30,4 +30,8 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./examples
+          publish_dir: ./
+          keep_files: false
+          publish_branch: gh-pages
+          destination_dir: .
+          exclude_assets: 'node_modules/**,src/**,docs/**,*.json,*.yml'
