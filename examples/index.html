@@ -40,12 +40,24 @@
     const columns = [
       { title: 'ID', field: 'id', width: 100 },
       { title: 'Name', field: 'name', width: 200 },
-      { title: 'Age', field: 'age', width: 100, renderer: (val) => `${val} yrs` }
+      { title: 'Age', field: 'age', width: 100, renderer: (val) => `${val} yrs` },
+      { title: 'Email', field: 'email', width: 300 },
+      { title: 'Phone', field: 'phone', width: 200 },
+      { title: 'Address', field: 'address', width: 300 },
+      { title: 'City', field: 'city', width: 200 },
+      { title: 'State', field: 'state', width: 100 },
+      { title: 'Zip', field: 'zip', width: 100 }
     ];
     const data = Array.from({ length: 20 }, (_, i) => ({
-      id: i + 1,
-      name: `User ${i + 1}`,
-      age: 20 + i
+        id: i + 1,
+        name: `Person ${i + 1}`,
+        age: Math.floor(Math.random() * 50) + 20,
+        email: `person${i + 1}@example.com`,
+        phone: `123-456-${1000 + i}`,
+        address: `123 Main St`,
+        city: `City ${i + 1}`,
+        state: `State ${i + 1}`,
+        zip: `12345${i + 1}`
     }));
 
     // 创建表格实例
