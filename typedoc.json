@@ -1,0 +1,9 @@
+{
+    "entryPoints": ["src/svg-datatable.ts"],
+    "out": "docs",
+    "excludePrivate": true,
+    "excludeProtected": true,
+    "readme": "README.md",
+    "name": "SVGDataTable Documentation",
+    "theme": "default"
+  }
