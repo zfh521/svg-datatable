@@ -1,73 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SVGDataTable Demo</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-    }
-    #app {
-      border: 1px solid #ccc;
-      width: 800px;
-      height: 400px;
-    }
-    .controls {
-      margin-top: 10px;
-    }
-    button {
-      margin-right: 10px;
-      padding: 5px 10px;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SVG DataTable</title>
 </head>
 <body>
-  <h1>SVGDataTable Demo</h1>
   <div id="app"></div>
-  <div class="controls">
-    <button onclick="highlightRow()">Highlight Row 1</button>
-    <button onclick="scrollToRow()">Scroll to Row 5</button>
-    <button onclick="updateData()">Update Data</button>
-    <button onclick="copySelection()">Copy Selection</button>
-  </div>
-
-  <script type="module">
-    import SVGDataTable from '../dist/svg-datatable.esm.js';
-
-    // 初始化数据
-    const columns = [
-      { title: 'ID', field: 'id', width: 100 },
-      { title: 'Name', field: 'name', width: 200 },
-      { title: 'Age', field: 'age', width: 100, renderer: (val) => `${val} yrs` }
-    ];
-    const data = Array.from({ length: 20 }, (_, i) => ({
-      id: i + 1,
-      name: `User ${i + 1}`,
-      age: 20 + i
-    }));
-
-    // 创建表格实例
-    const table = new SVGDataTable('#app', {
-      width: 800,
-      height: 400,
-      columns,
-      data,
-      fixedColumns: 1,
-      debug: true
-    });
-
-    // 控制函数
-    window.highlightRow = () => table.highlightRow(1, '#FFFECC');
-    window.scrollToRow = () => table.scrollToRow(5);
-    window.updateData = () => {
-      table.updateData([
-        ...data.slice(0, 2),
-        { id: 3, name: 'Charlie', age: 35 }
-      ]);
-    };
-    window.copySelection = () => table.copy();
-  </script>
+  <script type="module" src="/src/main.ts"></script>
 </body>
 </html>
