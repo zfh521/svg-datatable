@@ -1,17 +1,48 @@
 {
   "name": "svg-datatable",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "A high-performance SVG-based data table component with virtual scrolling, cell selection, and data copying.",
+  "main": "dist/svg-datatable.js",
+  "module": "dist/svg-datatable.esm.js",
+  "types": "dist/svg-datatable.d.ts",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "docs": "typedoc"
+    "build": "tsc && rollup -c",
+    "dev": "tsc --watch",
+    "docs": "typedoc",
+    "clean": "rimraf dist docs",
+    "prepublishOnly": "npm run clean && npm run build"
   },
+  "keywords": [
+    "svg",
+    "datatable",
+    "virtual-scroll",
+    "typescript",
+    "table"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/svg-datatable.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/svg-datatable/issues"
+  },
+  "homepage": "https://github.com/your-username/svg-datatable#readme",
   "devDependencies": {
-    "typedoc": "^0.27.9",
-    "typescript": "~5.7.2",
-    "vite": "^6.2.0"
-  }
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.13.0",
+    "tslib": "^2.6.2",
+    "typedoc": "^0.25.12",
+    "typescript": "^5.4.2"
+  },
+  "dependencies": {}
 }
