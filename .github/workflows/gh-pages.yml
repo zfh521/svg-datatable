@@ -5,6 +5,9 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write  # 授予写权限以推送分支
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
